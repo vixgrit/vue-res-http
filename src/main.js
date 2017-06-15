@@ -3,7 +3,7 @@ import App from './App.vue'
 import VueResource from 'vue-resource'
 
 Vue.use(VueResource);
-Vue.http.options.root = 'https://vuejs-http-7f41c.firebaseio.com/data.json';
+Vue.http.options.root = 'https://vuejs-http-7f41c.firebaseio.com/';
 Vue.http.interceptors.push((request, next) => {
   console.log(request);
   if (request.method === 'POST') {
