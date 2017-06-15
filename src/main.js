@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueResource from 'vue-resource'
 
 Vue.use(VueResource);
+Vue.http.options.root = 'https://vuejs-http-7f41c.firebaseio.com/data.json';
 
 new Vue({
   el: '#app',
