@@ -14,6 +14,7 @@
         <button class="btn primary" @click="submit">Submit</button>
         <hr>
         <button class="btn btn-primary" @click="fetchData">Get Data</button>
+        <br><br>
         <ul class="list-group">
           <li class="list-group-item" v-for="u in users">{{ u.username }} - {{ u.email }}</li>
         </ul>
@@ -47,7 +48,13 @@
           .then(response => {
             return response.json();
           })
-          .then(data => console.log(data));
+          .then(data => {
+            const resultArray = [];
+            for (let key in data) {
+              resultArray.push(data[key]);
+              this.users = resultArray;
+            }
+          });
       }
     }
   }
